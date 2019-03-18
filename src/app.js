@@ -6,7 +6,6 @@ import typeDefs from './typeDefs'
 import resolvers from './resolvers'
 
 const app = express()
-app.set('port', process.env.PORT || '4000')
 
 const pubsub = new PubSub()
 
@@ -25,6 +24,4 @@ server.applyMiddleware({ app })
 const httpServer = http.createServer(app)
 server.installSubscriptionHandlers(httpServer)
 
-httpServer.listen(app.get('port'), () =>
-  console.log(`Server running on port ${app.get('port')}`)
-)
+export default httpServer

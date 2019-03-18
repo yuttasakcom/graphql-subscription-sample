@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "env-cmd ./dev.env nodemon src/app.js --exec babel-node"
+    "dev": "env-cmd ./dev.env nodemon src/server.js --exec babel-node"
   },
   "dependencies": {
     "apollo-server-express": "^2.4.8",
