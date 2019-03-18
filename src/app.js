@@ -6,9 +6,7 @@ import typeDefs from './typeDefs'
 import resolvers from './resolvers'
 
 const app = express()
-
 const pubsub = new PubSub()
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -20,7 +18,6 @@ const server = new ApolloServer({
 })
 
 server.applyMiddleware({ app })
-
 const httpServer = http.createServer(app)
 server.installSubscriptionHandlers(httpServer)
 
